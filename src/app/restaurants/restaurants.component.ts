@@ -10,12 +10,15 @@ import { RestaurantsService } from './restaurants.service';
 })
 export class RestaurantsComponent implements OnInit {
 
-  restaurants: Restaurant[]
+  restaurants: Restaurant[] //lista de restaurantes
 
+  //definindo a classe restaurantService no construtor
   constructor(private restaurantsService: RestaurantsService) { }
 
+  //ao iniciar o component
   ngOnInit() {
-    this.restaurantsService.restaurants().subscribe(restaurants => this.restaurants = restaurants)
+    /* Neste método chamamos a função restaurantsService.getRestaurants, que nos retorna um Observable contendo um array de restaurantes, então atribuímos ao this.restaurants */
+    this.restaurantsService.getRestaurants().subscribe(restaurants => this.restaurants = restaurants)
   }
 
 }
