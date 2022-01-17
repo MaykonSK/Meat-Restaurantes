@@ -24,6 +24,9 @@
 
 `json-server db.json`
 
+### Como consumir API Rest utilizando Http
+https://medium.com/tableless/entendendo-rxjs-observable-com-angular-6f607a9a6a00
+
 ## Goodies
 
 Expressões regulares usadas na validação de formulários
