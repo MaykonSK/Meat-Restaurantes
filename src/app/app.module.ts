@@ -1,8 +1,13 @@
+import { ReviewsComponent } from './restaurants/restaurant-detail/reviews/reviews.component';
+import { ShoppingCartComponent } from './restaurants/restaurant-detail/shopping-cart/shopping-cart.component';
+import { MenuItemComponent } from './restaurants/restaurant-detail/menu-item/menu-item.component';
+import { MenuComponent } from './restaurants/restaurant-detail/menu/menu.component';
+import { RestaurantDetailComponent } from './restaurants/restaurant-detail/restaurant-detail.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { ROUTES } from './routes.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -12,7 +17,7 @@ import { FooterComponent } from './footer/footer.component'
 import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
-
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { RestaurantsService } from './restaurants/restaurants.service';
     FooterComponent,
     AboutComponent,
     RestaurantsComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    RestaurantDetailComponent,
+    MenuComponent,
+    MenuItemComponent,
+    ShoppingCartComponent,
+    ReviewsComponent
    ],
   imports: [
     BrowserModule,
