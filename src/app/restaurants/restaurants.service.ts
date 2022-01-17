@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from "@angular/http";
 import 'rxjs/add/operator/map';
 import { Observable } from "rxjs/Observable";
+import { ErrorHandler } from "app/app.error-handler";
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class RestaurantsService {
@@ -14,6 +16,8 @@ export class RestaurantsService {
 
   //obsersable - observa a interface de lista de restaurantes
   getRestaurants(): Observable<Restaurant[]> {
-    return this.http.get('http://localhost:3000/restaurants').map(response => response.json());
+    // o metodo get não executa nenhuma ação, ele é apenas para configurar o observable que vai acessar a URL, quando alguem subscrever (subscribe)
+    //operador catch serve para tratar erro. O mesmo está utilizando classe externa
+    return this.http.get('http://localhost:3000/restaurants').map(response => response.json()).catch(ErrorHandler.handlerError);
   }
 }
